@@ -1,0 +1,32 @@
+.list-item {
+    padding: 45px 0 45px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.list-container {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+.list-item-info > div {
+    margin-bottom: 12px;
+}
+
+.list-item-info > div:first-child {
+    margin-bottom: 9px;
+    color: var(--text-muted);
+}
+
+.list-item-info > div > span:first-child {
+    margin-right: 4px;
+}
+
+.list-item-info > div > span:nth-child(2) {
+    color: var(--text-grey);
+}
+

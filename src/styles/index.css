@@ -93,3 +93,9 @@ a {
 .mr-45 {
     margin-right: 45px;
 }
+
+.fab {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+}

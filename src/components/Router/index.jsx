@@ -8,6 +8,7 @@ import {
 import NavBar from "../NavBar";
 import Login from "../../pages/Ligin";
 import Info from "../../pages/Info";
+import Jogs from "../../pages/Jogs";
 
 
 function Router() {
@@ -30,7 +31,7 @@ function Router() {
 
 
                     <Route exact path="/jogs">
-                        <div>Jogs</div>
+                        <Jogs/>
                     </Route>
 
                     <Route path="/jogs/add">
