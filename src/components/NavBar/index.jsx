@@ -1,19 +1,12 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
-import { Logo, FilterActive } from '../../Icons';
-import Filter from "./components/Filter";
+import {Logo} from '../../Icons';
 import Links from "./components/Links";
 import '../../styles/navbar.css';
-import {IconButton} from "../Buttons";
+import FilterButton from "./components/FilterButton";
 
 
 function NavBar() {
-    const [open, setOpen] = useState(false);
-
-    const onFilterClick = () => {
-        setOpen(!open);
-    }
-
     return (
         <Fragment>
             <nav className="nav-bar navbar">
@@ -21,14 +14,12 @@ function NavBar() {
                     <Logo/>
                 </Link>
                 <div className="nav-bar">
-                     <Links/>
+                    <Links/>
 
-                    <IconButton onClick={onFilterClick}>
-                        <FilterActive/>
-                    </IconButton>
+                    <FilterButton/>
                 </div>
             </nav>
-            {open && <Filter />}
+
         </Fragment>
     )
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Icon } from '../../Icons';
-import '../../styles/listItem.css';
+import { Icon } from '../../../Icons';
+import '../../../styles/listItem.css';
 
 
 function ListItem({data, url}) {

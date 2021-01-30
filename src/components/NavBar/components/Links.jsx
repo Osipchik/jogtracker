@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 function Links() {
     return (
-        <Fragment>
+        <div className="d-flex">
             <NavLink to="/jogs" activeClassName="active-link">
                 JOGS
             </NavLink>
@@ -16,7 +16,7 @@ function Links() {
             <NavLink to="/contact" activeClassName="active-link">
                 CONTACT US
             </NavLink>
-        </Fragment>
+        </div>
     )
 }
 

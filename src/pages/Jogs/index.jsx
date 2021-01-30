@@ -1,8 +1,9 @@
 import React, { Fragment } from 'react';
-import {useRouteMatch, Link, useHistory} from 'react-router-dom';
+import {useRouteMatch, useHistory} from 'react-router-dom';
 import { Add } from '../../Icons';
-import ListItem from './ListItem';
+import ListItem from './components/ListItem';
 import {IconButton} from "../../components/Buttons";
+import FilterBar from "./components/FilterBar";
 
 
 function Jogs() {
@@ -29,6 +30,7 @@ function Jogs() {
 
     return (
         <Fragment>
+            <FilterBar/>
             <ul className="list-container">
                 {data.map((i, index) => <ListItem key={i.id} data={i} url={url}/>)}
             </ul>

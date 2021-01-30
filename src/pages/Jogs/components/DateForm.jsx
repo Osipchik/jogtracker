@@ -5,9 +5,9 @@ import '../../../styles/date-form.css';
 function DateForm({label}) {
     return (
         <div className="data-form">
-            <span className="label">
+            <label className="label">
                 {label}
-            </span>
+            </label>
             <input type="date" className="input"/>
         </div>
     )

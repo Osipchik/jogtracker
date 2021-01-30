@@ -1,12 +1,15 @@
 import React from 'react';
 import Router from "./components/Router";
+import FilterBarHandler from "./components/FilterBarHandler";
 
 
 function App() {
     return (
-        <div className="container">
-            <Router/>
-        </div>
+        <FilterBarHandler>
+            <div className="container">
+                <Router/>
+            </div>
+        </FilterBarHandler>
     )
 }
 
