@@ -15,19 +15,23 @@ button {
 }
 
 .rounded-button {
-    padding: 17px 31px 16px;
     border-radius: 36px;
     border: solid 3px;
     background-color: inherit;
     width: max-content;
+    font-weight: bold;
 }
 
 .button-large {
     height: 60px;
     font-size: 18px;
-    font-weight: bold;
 }
 
+.button-small {
+    height: 42px;
+    font-size: 12.6px;
+    border: solid 2px;
+}
 
 .button-white {
     color: var(--white-two);

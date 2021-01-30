@@ -10,6 +10,7 @@ import Login from "../../pages/Ligin";
 import Info from "../../pages/Info";
 import Jogs from "../../pages/Jogs";
 import EmptyJog from "../../pages/EmptyJog/intex";
+import {AddJog, EditJog} from "../../pages/JogForm";
 
 
 function Router() {
@@ -36,11 +37,11 @@ function Router() {
                     </Route>
 
                     <Route path="/jogs/add">
-                        <div>AddJog</div>
+                        <AddJog/>
                     </Route>
 
                     <Route path="/jogs/edit/:id">
-                        <div>JogEdit</div>
+                        <EditJog/>
                     </Route>
 
 

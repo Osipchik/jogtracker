@@ -1,0 +1,43 @@
+.create-container {
+    width: 503px;
+    height: 379px;
+    padding: 24px 27px 47px;
+    border-radius: 44px;
+    background-color: var(--primary);
+    box-sizing: border-box;
+    margin: 11.5% auto 0;
+}
+
+
+.create-form {
+    margin-top: 50px;
+    padding: 0 62px 0;
+}
+
+.form-button {
+    padding: 12px 0 10px;
+    border-radius: 25.2px;
+    border: solid 2px var(--white-two);
+    color: var(--white-two);
+    margin-top: 20px;
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group-input {
+    border-radius: 7px;
+    border: solid 1px var(--warm-grey);
+    background-color: var(--white-two);
+    height: 31px;
+    flex-grow: 1;
+}
+
+.form-group-label {
+    width: 71px;
+    display: inline-block;
+    font-size: 16px;
+    padding: 6px 16px 6px 0;
+}
