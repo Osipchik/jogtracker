@@ -15,6 +15,7 @@ button {
 }
 
 .rounded-button {
+    padding: 17px 31px 16px;
     border-radius: 36px;
     border: solid 3px;
     background-color: inherit;
@@ -28,6 +29,7 @@ button {
 }
 
 .button-small {
+    padding: 0;
     height: 42px;
     font-size: 12.6px;
     border: solid 2px;
