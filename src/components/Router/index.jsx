@@ -6,6 +6,7 @@ import {
     Redirect
 } from "react-router-dom";
 import NavBar from "../NavBar";
+import Login from "../../pages/Ligin";
 
 
 function Router() {
@@ -23,7 +24,7 @@ function Router() {
                     }
 
                     <Route path="/login">
-                        <div>Login</div>
+                        <Login/>
                     </Route>
 
 

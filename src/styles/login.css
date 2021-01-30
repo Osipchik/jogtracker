@@ -1,0 +1,11 @@
+.login-container {
+    width: 503px;
+    height: 379px;
+    border-radius: 44px;
+    background-color: var(--pink);
+}
+
+.login-margin {
+    margin-top: 76px;
+    margin-bottom: 56px;
+}
