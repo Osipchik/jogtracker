@@ -13,3 +13,26 @@ button {
     justify-content: center;
     align-items: center;
 }
+
+.rounded-button {
+    padding: 17px 31px 16px;
+    border-radius: 36px;
+    border: solid 3px;
+    background-color: inherit;
+    width: max-content;
+}
+
+.button-large {
+    height: 60px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+.button-white {
+    color: var(--white-two);
+}
+
+.button-pink {
+    color: var(--pink);
+}
