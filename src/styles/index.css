@@ -78,7 +78,6 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100%;
 }
 
 .d-flex {
@@ -98,4 +97,15 @@ a {
     position: fixed;
     bottom: 40px;
     right: 40px;
+}
+
+.message {
+    color: var(--text-light);
+    font-size: 24px;
+    line-height: 1.21;
+    font-weight: normal;
+}
+
+.message-empty-space {
+    margin: 45px 0 140px;
 }

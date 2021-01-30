@@ -9,6 +9,7 @@ import NavBar from "../NavBar";
 import Login from "../../pages/Ligin";
 import Info from "../../pages/Info";
 import Jogs from "../../pages/Jogs";
+import EmptyJog from "../../pages/EmptyJog/intex";
 
 
 function Router() {
@@ -48,7 +49,7 @@ function Router() {
                     </Route>
 
                     <Route path="/jogs/empty">
-                        <div>EmptyJog</div>
+                        <EmptyJog/>
                     </Route>
 
                 </Switch>
