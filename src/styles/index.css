@@ -39,3 +39,28 @@ html, body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
+
+:root {
+    --white-two: #ffffff;
+    --white: #eaeaea;
+    --primary: #7ed321;
+    --pink: #e990f9;
+
+    --text-light: #9f9d9d;
+    --text-muted: #bab3b3;
+    --text-grey: #717171;
+    --warm-grey: #979797;
+}
+
+
+.container {
+    max-width: 1440px;
+    margin: auto;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}

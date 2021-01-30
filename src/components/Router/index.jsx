@@ -5,6 +5,7 @@ import {
     Route,
     Redirect
 } from "react-router-dom";
+import NavBar from "../NavBar";
 
 
 function Router() {
@@ -12,7 +13,7 @@ function Router() {
 
     return (
         <BrowserRouter >
-            <div>nav</div>
+            <NavBar/>
 
             <div className="main">
                 <Switch>

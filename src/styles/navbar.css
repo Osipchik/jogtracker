@@ -1,0 +1,39 @@
+.navbar {
+    padding: 30px 37px 30px;
+    background-color: var(--primary);
+}
+
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-bar a {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--white-two);
+    margin-right: 45px;
+    position: relative;
+}
+
+.active-link::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    right: 0;
+    bottom: -4px;
+    height: 2px;
+
+    background-color: var(--white-two);
+}
+
+
+.logo {
+    width: 147px;
+    height: 56px;
+    margin: 0 875.2px 0 0;
+    padding: 0 1.3px 0 0;
+    object-fit: contain;
+}

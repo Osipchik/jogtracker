@@ -1,0 +1,30 @@
+.data-form {
+    vertical-align: middle;
+    text-align: center;
+}
+
+.label {
+    font-size: 13px;
+    color: var(--warm-grey);
+}
+
+
+.input {
+    border-radius: 11px;
+    border: solid 1px var(--warm-grey);
+    background-color: var(--white-two);
+    outline: none;
+    width: 100px;
+    height: 31px;
+    margin-right: 45px;
+    margin-left: 15px;
+}
+
+
+.filter {
+    height: 60px;
+    display: flex;
+    background-color: var(--white);
+    justify-content: center;
+    align-items: center;
+}

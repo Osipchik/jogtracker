@@ -1,0 +1,15 @@
+button {
+    border: none;
+    background-color: inherit;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+    font-family: SFUIText;
+
+}
+
+.icon-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
