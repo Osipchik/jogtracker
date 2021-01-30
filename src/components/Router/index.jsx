@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import NavBar from "../NavBar";
 import Login from "../../pages/Ligin";
+import Info from "../../pages/Info";
 
 
 function Router() {
@@ -42,7 +43,7 @@ function Router() {
 
 
                     <Route path="/info">
-                        <div>Info</div>
+                        <Info/>
                     </Route>
 
                     <Route path="/jogs/empty">

@@ -1,0 +1,18 @@
+.info {
+    margin: 8.3% auto;
+    max-width: 42%;
+}
+
+.info h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--primary);
+    margin: 15px 0;
+}
+
+.info p {
+    margin-bottom: 30px;
+    font-size: 14px;
+    line-height: 1.71;
+}
+
