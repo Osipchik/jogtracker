@@ -1,8 +1,0 @@
-export { default as Add } from './Add'
-export { default as BearFace } from './BearFace'
-export { default as Cancel } from './Cancel'
-export { default as FilterActive } from './FilterActive'
-export { default as Filter } from './Filter'
-export { default as Icon } from './Icon'
-export { default as Logo } from './Logo'
-export { default as SadRoundedSquareEmoticon } from './SadRoundedSquareEmoticon'

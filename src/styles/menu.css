@@ -1,0 +1,55 @@
+.navbar-menu {
+    background-color: var(--white-two);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1001;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar-menu .navbar {
+    background-color: var(--white-two);
+}
+
+.navbar-menu a:not(.logo) {
+    font-weight: bold;
+    font-size: 25px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.navbar-menu a.active-link {
+    color: var(--primary);
+}
+
+.navbar-menu > div {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 27.6%;
+}
+
+
+.svg-primary {
+    color: var(--primary);
+    fill: var(--primary);
+}
+
+.svg-primary * {
+    color: var(--primary);
+    fill: var(--primary);
+}
+
+
+
+.svg-warm-grey {
+    color: var(--warm-grey);
+    fill: var(--warm-grey);
+}
+
+.svg-warm-grey * {
+    color: var(--warm-grey);
+    fill: var(--warm-grey);
+}
