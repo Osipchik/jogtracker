@@ -2,14 +2,17 @@ import React, { useContext }  from 'react';
 import { useHistory } from 'react-router-dom';
 import { RoundedButton } from '../../components/Buttons';
 import {BearFaceIcon, BearFacePinkIcon} from "../../Icons";
+import AuthorizeContext from "../../contexts/AuthorizeContext";
 import '../../styles/login.css';
 
 
 function Login() {
+    const { authorize } = useContext(AuthorizeContext);
     const history = useHistory();
 
     const onClick = () => {
         history.replace('/jogs');
+        authorize();
     }
 
     return (

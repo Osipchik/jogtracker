@@ -1,13 +1,17 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { LogoIcon, LogoSmIcon } from '../../Icons';
 import Links from "./components/Links";
 import FilterButton from "./components/FilterButton";
 import Menu from "./components/Menu";
+import AuthorizeContext from "../../contexts/AuthorizeContext";
 import '../../styles/navbar.css';
 
 
 function NavBar() {
+    const { isAuth } = useContext(AuthorizeContext);
+
+
     return (
         <Fragment>
             <nav className="nav-bar navbar">
@@ -16,13 +20,15 @@ function NavBar() {
                     <LogoSmIcon className="md-hide"/>
                 </Link>
 
-                <div className="nav-bar">
-                    <Links className="sm-hide"/>
+                {isAuth && (
+                    <div className="nav-bar">
+                        <Links className="sm-hide"/>
 
-                    <FilterButton className=""/>
+                        <FilterButton className=""/>
 
-                    <Menu/>
-                </div>
+                        <Menu/>
+                    </div>
+                )}
             </nav>
         </Fragment>
     )

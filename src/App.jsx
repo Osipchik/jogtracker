@@ -1,14 +1,17 @@
 import React from 'react';
 import Router from "./components/Router";
 import FilterBarHandler from "./components/FilterBarHandler";
+import AuthorizeHandler from "./components/AuthorizeHandler";
 
 
 function App() {
     return (
         <FilterBarHandler>
-            <div className="container">
-                <Router/>
-            </div>
+            <AuthorizeHandler>
+                <div className="container">
+                    <Router/>
+                </div>
+            </AuthorizeHandler>
         </FilterBarHandler>
     )
 }
