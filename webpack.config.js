@@ -1,10 +1,11 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+require('@babel/polyfill');
 
 
 module.exports = {
-    entry: './src/index.js',
+    entry: ['@babel/polyfill', './src/index.js'],
     module: {
         rules: [
             {
@@ -62,21 +63,11 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
     },
     optimization: {
-        runtimeChunk: 'single',
-        removeAvailableModules: false,
-        removeEmptyChunks: false,
+        minimize: true,
 
         splitChunks: {
             chunks: 'all',
-
-            minSize: 20000,
-            minRemainingSize: 0,
-            maxSize: 50000,
-            minChunks: 1,
-            maxAsyncRequests: 30,
-            maxInitialRequests: 30,
-            enforceSizeThreshold: 50000,
-            
+            minChunks: 4,            
             cacheGroups: {
                 vendor: {
                     test: /[\\/]node_modules[\\/]/,

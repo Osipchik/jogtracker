@@ -10,9 +10,9 @@ function Login() {
     const { authorize } = useContext(AuthorizeContext);
     const history = useHistory();
 
-    const onClick = () => {
+    const onClick = async () => {
+        await authorize();
         history.replace('/jogs');
-        authorize();
     }
 
     return (

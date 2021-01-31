@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-function FormGroup({displayName, defaultValue}) {
+function FormGroup({displayName, defaultValue, type, name, step = "1", min}) {
     return (
         <div className="form-group d-flex">
             <label className="form-group-label" htmlFor={displayName}>
@@ -10,8 +10,12 @@ function FormGroup({displayName, defaultValue}) {
 
             <input
                 className="form-group-input"
-                name={displayName}
+                type={type}
+                name={name}
                 defaultValue={defaultValue}
+                step={step}
+                required
+                min={min}
             />
         </div>
     )

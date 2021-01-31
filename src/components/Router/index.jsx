@@ -9,7 +9,7 @@ import NavBar from "../NavBar";
 import Login from "../../pages/Ligin";
 import Info from "../../pages/Info";
 import Jogs from "../../pages/Jogs";
-import EmptyJog from "../../pages/EmptyJog/intex";
+import EmptyJog from "../../pages/EmptyJog/index";
 import { AddJog, EditJog } from "../../pages/JogForm";
 import AuthorizeContext from "../../contexts/AuthorizeContext";
 

@@ -9,6 +9,10 @@ import '../../../styles/jog-form.css'
 function FormView({onSubmit, distance, time, date}) {
     const history = useHistory();
 
+    let dateObject = new Date(date)
+
+    let isoDate = dateObject.toISOString().substr(0, 10);
+
     const onCancel = () => {
         history.goBack();
     }
@@ -23,9 +27,30 @@ function FormView({onSubmit, distance, time, date}) {
             </div>
 
             <form onSubmit={onSubmit} className="create-form">
-                <FormGroup displayName="Distance" defaultValue={distance}/>
-                <FormGroup displayName="Time" defaultValue={time}/>
-                <FormGroup displayName="Date" defaultValue={date}/>
+                <FormGroup 
+                    displayName="Distance" 
+                    defaultValue={distance}
+                    name="distance"
+                    type="number"
+                    step="0.01"
+                    min={0.01}
+                />
+                
+                <FormGroup 
+                    displayName="Time" 
+                    defaultValue={time}
+                    name="time"
+                    type="number"
+                    min={1}
+                />
+                
+                <FormGroup 
+                    displayName="Date" 
+                    defaultValue={isoDate}
+                    name="date"
+                    type="date"
+                />
+
 
                 <RoundedButton displayName="Save" size="small" className="w-100 "/>
             </form>

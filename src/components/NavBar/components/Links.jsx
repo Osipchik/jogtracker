@@ -8,15 +8,15 @@ function Links({className, onClick}) {
     return (
         <div className={clsx('d-flex', className)}>
             <NavLink to="/jogs" activeClassName="active-link" onClick={onClick}>
-                JOGS
+                Jogs
             </NavLink>
 
             <NavLink to="/info" activeClassName="active-link" onClick={onClick}>
-                INFO
+                Info
             </NavLink>
 
             <NavLink to="/contact" activeClassName="active-link" onClick={onClick}>
-                CONTACT US
+                Contact us
             </NavLink>
         </div>
     )
