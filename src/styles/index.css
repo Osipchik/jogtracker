@@ -65,6 +65,9 @@ a {
     color: inherit;
 }
 
+input {
+    outline: none;
+}
 
 .center {
     position: absolute;
@@ -93,21 +96,14 @@ a {
     margin-right: 45px;
 }
 
+.ml-45 {
+    margin-left: 45px;
+}
+
 .fab {
     position: fixed;
     bottom: 40px;
     right: 40px;
-}
-
-.message {
-    color: var(--text-light);
-    font-size: 24px;
-    line-height: 1.21;
-    font-weight: normal;
-}
-
-.message-empty-space {
-    margin: 45px 0 140px;
 }
 
 .ml-auto {
@@ -116,4 +112,29 @@ a {
 
 .w-100 {
     width: 100%;
+}
+
+
+.md-hide {
+    display: none;
+}
+
+@media (max-width: 576px) {
+    .sm-hide {
+        display: none;
+    }
+
+    .md-hide {
+        display: unset;
+    }
+
+    .fab {
+        bottom: 30px;
+        right: 30px;
+    }
+}
+
+
+.overflow-hide {
+    overflow: hidden;
 }

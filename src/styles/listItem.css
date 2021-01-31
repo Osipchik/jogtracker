@@ -30,3 +30,11 @@ li {
     color: var(--text-grey);
 }
 
+
+
+@media (max-width: 576px) {
+    .list-item {
+        border-bottom: 1px solid var(--white);
+        padding: 41px 0 40px;
+    }
+}

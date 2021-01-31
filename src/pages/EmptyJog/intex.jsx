@@ -1,7 +1,8 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import {SadRoundedSquareEmoticon} from "../../Icons";
-import {RoundedButton} from "../../components/Buttons";
+import {SadRoundedSquareEmoticonSmIcon, SadRoundedSquareEmotionIcon} from "../../Icons";
+import { RoundedButton } from "../../components/Buttons";
+import '../../styles/empty.css';
 
 
 function EmptyJog() {
@@ -12,9 +13,13 @@ function EmptyJog() {
     }
 
     return (
-        <div className="center flex-center">
-            <SadRoundedSquareEmoticon/>
-            <h2 className="message message-empty-space">Nothing is here</h2>
+        <div className="empty-container">
+            <div className="flex-center">
+                <SadRoundedSquareEmotionIcon className="sm-hide"/>
+                <SadRoundedSquareEmoticonSmIcon className="md-hide"/>
+                <h2 className="message message-empty-space">Nothing is here</h2>
+            </div>
+
             <RoundedButton
                 displayName="Create your jog first"
                 theme="pink"

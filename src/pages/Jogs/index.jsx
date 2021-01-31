@@ -1,17 +1,16 @@
 import React, { Fragment } from 'react';
-import {useRouteMatch, useHistory} from 'react-router-dom';
-import { Add } from '../../Icons';
+import { useHistory } from 'react-router-dom';
+import {AddIcon, AddSmIcon} from '../../Icons';
 import ListItem from './components/ListItem';
-import {IconButton} from "../../components/Buttons";
+import { IconButton } from "../../components/Buttons";
 import FilterBar from "./components/FilterBar";
 
 
 function Jogs() {
     const history = useHistory();
-    let { url } = useRouteMatch();
 
     const onAddClick = () => {
-        history.push('/jogs/add');
+        history.push('/add');
     }
 
     let data = [
@@ -32,11 +31,12 @@ function Jogs() {
         <Fragment>
             <FilterBar/>
             <ul className="list-container">
-                {data.map((i, index) => <ListItem key={i.id} data={i} url={url}/>)}
+                {data.map((i, index) => <ListItem key={i.id} data={i}/>)}
             </ul>
 
             <IconButton className="fab" onClick={onAddClick}>
-                <Add/>
+                <AddIcon className="sm-hide"/>
+                <AddSmIcon className="md-hide"/>
             </IconButton>
         </Fragment>
     )

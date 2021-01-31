@@ -28,3 +28,15 @@
     justify-content: center;
     align-items: center;
 }
+
+
+@media (max-width: 576px) {
+    .filter {
+        justify-content: space-around;
+    }
+
+    .input {
+        width: 72px;
+        margin-right: 0;
+    }
+}

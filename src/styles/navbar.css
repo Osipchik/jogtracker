@@ -3,7 +3,6 @@
     background-color: var(--primary);
 }
 
-
 .nav-bar {
     display: flex;
     justify-content: space-between;
@@ -29,11 +28,27 @@
     background-color: var(--white-two);
 }
 
-
 .logo {
     width: 147px;
     height: 56px;
     margin: 0 875.2px 0 0;
     padding: 0 1.3px 0 0;
     object-fit: contain;
+}
+
+.hide {
+    display: none;
+}
+
+
+@media (max-width: 576px) {
+    .navbar {
+        padding: 20px 25px 20px;
+        background-color: var(--primary);
+    }
+
+    .logo {
+        width: 98px;
+        height: 37px;
+    }
 }

@@ -1,9 +1,10 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
-import {Logo} from '../../Icons';
+import { LogoIcon, LogoSmIcon } from '../../Icons';
 import Links from "./components/Links";
-import '../../styles/navbar.css';
 import FilterButton from "./components/FilterButton";
+import Menu from "./components/Menu";
+import '../../styles/navbar.css';
 
 
 function NavBar() {
@@ -11,15 +12,18 @@ function NavBar() {
         <Fragment>
             <nav className="nav-bar navbar">
                 <Link to="/login" className="logo">
-                    <Logo/>
+                    <LogoIcon className="sm-hide"/>
+                    <LogoSmIcon className="md-hide"/>
                 </Link>
-                <div className="nav-bar">
-                    <Links/>
 
-                    <FilterButton/>
+                <div className="nav-bar">
+                    <Links className="sm-hide"/>
+
+                    <FilterButton className=""/>
+
+                    <Menu/>
                 </div>
             </nav>
-
         </Fragment>
     )
 }

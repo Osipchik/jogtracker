@@ -7,6 +7,7 @@ function FilterBarHandler({children}) {
 
     const toggleFilter = () => {
         setOpen(!open);
+
     }
 
     const value = {

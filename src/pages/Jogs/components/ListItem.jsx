@@ -4,14 +4,14 @@ import { Icon } from '../../../Icons';
 import '../../../styles/listItem.css';
 
 
-function ListItem({data, url}) {
+function ListItem({ data }) {
     return (
         <li className="list-item">
             <div className="d-flex justify-center">
-                <Link to={`${url}/edit/${data.id}`}>
+                <Link to={`/edit/${data.id}`}>
                     <Icon className="mr-45"/>
                 </Link>
-                <Link to={`${url}/edit/${data.id}`}>
+                <Link to={`/edit/${data.id}`}>
                     <div className="list-item-info">
                         <div>
                             <span>{data.date}</span>

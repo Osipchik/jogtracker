@@ -12,7 +12,24 @@
 
 .info p {
     margin-bottom: 30px;
+    margin-top: 0;
     font-size: 14px;
     line-height: 1.71;
 }
 
+@media (max-width: 576px) {
+    .info {
+        margin: 24px 25px;
+        max-width: fit-content;
+    }
+
+    .info h1 {
+        font-size: 25px;
+        margin: 6px 0;
+    }
+
+    .info p {
+        font-size: 12px;
+        line-height: 2.0;
+    }
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import {IconButton, RoundedButton} from '../../../components/Buttons';
-import {Cancel} from '../../../Icons';
+import { IconButton, RoundedButton } from '../../../components/Buttons';
+import {CancelIcon, CancelSmIcon} from '../../../Icons';
 import FormGroup from './FormGroup';
 import '../../../styles/jog-form.css'
 
@@ -17,7 +17,8 @@ function FormView({onSubmit, distance, time, date}) {
         <div className="create-container">
             <div>
                 <IconButton className="ml-auto" onClick={onCancel}>
-                    <Cancel/>
+                    <CancelIcon className="sm-hide"/>
+                    <CancelSmIcon className="md-hide"/>
                 </IconButton>
             </div>
 
@@ -26,7 +27,7 @@ function FormView({onSubmit, distance, time, date}) {
                 <FormGroup displayName="Time" defaultValue={time}/>
                 <FormGroup displayName="Date" defaultValue={date}/>
 
-                <RoundedButton displayName="Save" size="small" className="w-100"/>
+                <RoundedButton displayName="Save" size="small" className="w-100 "/>
             </form>
         </div>
     )

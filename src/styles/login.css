@@ -3,9 +3,40 @@
     height: 379px;
     border-radius: 44px;
     background-color: var(--pink);
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .login-margin {
     margin-top: 76px;
     margin-bottom: 56px;
+}
+
+
+@media (max-width: 576px) {
+    .login-container {
+        top: 32.7%;
+        left: 50%;
+        bottom: 20.4%;
+        transform: translate(-50%, 0);
+        height: unset;
+        width: unset;
+        background-color: inherit;
+    }
+
+    .login-button {
+        color: var(--pink);
+    }
+
+    .login-margin {
+        margin: 0;
+    }
+
+    .login-container > div {
+        height: 100%;
+        justify-content: space-between;
+    }
 }

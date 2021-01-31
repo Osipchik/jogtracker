@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Fragment, useContext} from 'react';
 import {
     BrowserRouter,
     Switch,
@@ -14,47 +14,45 @@ import {AddJog, EditJog} from "../../pages/JogForm";
 
 
 function Router() {
-    const isAuthorized = true;
+    const isAuthenticate = true;
+
 
     return (
         <BrowserRouter >
             <NavBar/>
 
-            <div className="main">
-                <Switch>
-                    {isAuthorized
-                        ? <Route exact path="/" render={() => <Redirect to="/jogs" />} />
-                        : <Route exact path="/" render={() => <Redirect to="/login" />} />
-                    }
+            <Switch>
+                {isAuthenticate
+                    ? <Route exact path="/" render={() => <Redirect to="/jogs" />} />
+                    : <Route exact path="/" render={() => <Redirect to="/login" />} />
+                }
 
-                    <Route path="/login">
-                        <Login/>
-                    </Route>
-
-
-                    <Route exact path="/jogs">
-                        <Jogs/>
-                    </Route>
-
-                    <Route path="/jogs/add">
-                        <AddJog/>
-                    </Route>
-
-                    <Route path="/jogs/edit/:id">
-                        <EditJog/>
-                    </Route>
+                <Route path="/login">
+                    <Login/>
+                </Route>
 
 
-                    <Route path="/info">
-                        <Info/>
-                    </Route>
+                <Route exact path="/jogs">
+                    <Jogs/>
+                </Route>
 
-                    <Route path="/jogs/empty">
-                        <EmptyJog/>
-                    </Route>
+                <Route path="/add">
+                    <AddJog/>
+                </Route>
 
-                </Switch>
-            </div>
+                <Route path="/edit/:id">
+                    <EditJog/>
+                </Route>
+
+
+                <Route path="/info">
+                    <Info/>
+                </Route>
+
+                <Route path="/jogs/empty">
+                    <EmptyJog/>
+                </Route>
+            </Switch>
         </BrowserRouter>
     )
 }

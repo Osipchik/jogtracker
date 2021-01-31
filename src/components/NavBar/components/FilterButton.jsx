@@ -1,17 +1,27 @@
-import React, {useContext} from "react";
-import {IconButton} from "../../Buttons";
+import React, { useContext } from "react";
+import { useHistory, useLocation } from 'react-router-dom'
+import { IconButton } from "../../Buttons";
 import FilterContext from "../../../contexts/FilterContext";
-import {Filter, FilterActive} from "../../../Icons";
+import { FilterIcon, FilterActive } from "../../../Icons";
 
 
-function FilterButton() {
+function FilterButton({className}) {
+    let location = useLocation();
+    const history = useHistory();
     const { isOpen, toggleFilter } = useContext(FilterContext);
 
+    const onToggle = () => {
+        if (location.pathname !== '/jogs') {
+            history.push('/jogs')
+        }
+        toggleFilter()
+    }
+
     return (
-        <IconButton onClick={toggleFilter}>
+        <IconButton onClick={onToggle} className={className}>
             {isOpen
                 ? <FilterActive/>
-                : <Filter/>
+                : <FilterIcon/>
             }
         </IconButton>
     )
