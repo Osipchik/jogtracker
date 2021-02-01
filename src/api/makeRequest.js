@@ -19,7 +19,6 @@ const makeRequest = async ({ url, method, body, authorization = false}) => {
         body: body && qs.stringify(body)
     })
 
-    console.log(res)
 
     return await res.json();
 }
