@@ -6,14 +6,28 @@ import FormGroup from './FormGroup';
 import '../../../styles/jog-form.css'
 
 
+function getIsoDate(date) {
+    if (date !== undefined) {
+        let dateObject = new Date(date)
+        return dateObject.toISOString().substr(0, 10);
+    }
+} 
+
 function FormView({onSubmit, distance, time, date}) {
     const history = useHistory();
 
-    let dateObject = new Date(date)
-
-    let isoDate = dateObject.toISOString().substr(0, 10);
+    let isoDate = getIsoDate(date);
 
     const onCancel = () => {
+        history.goBack();
+    }
+
+    const submit = (e) => {
+        e.preventDefault();
+
+        let formData = new FormData(e.target);
+        onSubmit(Object.fromEntries(formData));
+
         history.goBack();
     }
 
@@ -26,7 +40,7 @@ function FormView({onSubmit, distance, time, date}) {
                 </IconButton>
             </div>
 
-            <form onSubmit={onSubmit} className="create-form">
+            <form onSubmit={submit} className="create-form">
                 <FormGroup 
                     displayName="Distance" 
                     defaultValue={distance}
