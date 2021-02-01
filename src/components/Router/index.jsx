@@ -23,11 +23,6 @@ function Router() {
             <NavBar/>
 
             <Switch>
-                {/*{isAuth*/}
-                {/*    ? <Route exact path="/" render={() => <Redirect to="/jogs" />} />*/}
-                {/*    : <Route exact path="/" render={() => <Redirect to="/login" />} />*/}
-                {/*}*/}
-
                 <Route exact path="/" render={() => <Redirect to="/jogs" />} />
 
                 <Route path="/login">
