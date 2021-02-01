@@ -48,7 +48,7 @@ module.exports = {
         hot: true,
         overlay: true,
         open: true,
-        historyApiFallback: true,
+        // historyApiFallback: true,
     },
     plugins: [
         new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
