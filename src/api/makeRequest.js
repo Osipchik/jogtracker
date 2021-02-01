@@ -13,7 +13,7 @@ const makeRequest = async ({ url, method, body, authorization = false}) => {
     }
 
 
-    let res = await fetch(url, {
+    let res = await fetch('https://jogtracker.herokuapp.com/api/v1' + url, {
         method,
         headers,
         body: body && qs.stringify(body)
