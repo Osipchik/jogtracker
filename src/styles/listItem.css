@@ -19,7 +19,7 @@ li {
 
 .list-item-info > div:first-child {
     margin-bottom: 9px;
-    color: var(--text-muted);
+    color: var(--greyish);
 }
 
 .list-item-info > div > span:first-child {
