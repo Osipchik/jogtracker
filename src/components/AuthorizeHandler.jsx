@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Api, { setToken } from "../api";
 import { config } from "../api/config";
 import AuthorizeContext from "../contexts/AuthorizeContext";
@@ -7,12 +7,36 @@ import AuthorizeContext from "../contexts/AuthorizeContext";
 function AuthorizeHandler({children}) {
     let storedToken = JSON.parse(localStorage.getItem('token'));
     setToken(storedToken);
-    const [isAuth, setAuth] = useState(storedToken !== null);
+    const [isAuth, setAuth] = useState(false);
+
+    const timer = useRef();
+
+    const createTimer = (delay) => {
+        timer.current = setTimeout(() => {
+            localStorage.removeItem('token');
+            setToken(null);
+            setAuth(false);
+        }, delay)
+    }
+
+    const clearTimer = () => {
+        clearTimeout(timer.current);
+    }
 
 
     useEffect(() => {
 
-        console.log(config.expiresIn - Date.now())
+        if (!isAuth) {
+            clearTimer();
+        }
+
+        let expires = config.expiresIn - Date.now();
+
+        if (expires > 0) {
+            clearTimer();
+            createTimer(expires);
+            setAuth(true);
+        }
 
     }, [isAuth]);
 
