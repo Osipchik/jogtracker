@@ -1,9 +1,16 @@
 import makeRequest from "../makeRequest";
 
-export const uuidLogin = () => {
-    return makeRequest({
-        url: '/auth/uuidLogin',
-        method: 'post',
-        body: { uuid: 'hello' }
-    })
+export const uuidLogin = async () => {
+    try {
+        let json = await makeRequest({
+            url: '/auth/uuidLogin',
+            method: 'post',
+            body: { uuid: 'hello' }
+        });
+
+        return json.response;
+    }
+    catch (e) {
+
+    }
 }

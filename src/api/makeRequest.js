@@ -13,14 +13,19 @@ const makeRequest = async ({ url, method, body, authorization = false}) => {
     }
 
 
-    let res = await fetch('https://jogtracker.herokuapp.com/api/v1' + url, {
-        method,
-        headers,
-        body: body && qs.stringify(body)
-    })
+    try{
+        let res = await fetch('https://jogtracker.herokuapp.com/api/v1' + url, {
+            method,
+            headers,
+            body: body && qs.stringify(body)
+        })
 
-
-    return await res.json();
+        return await res.json();
+    }
+    catch (e) {
+        console.log('fetch failure');
+        throw e;
+    }
 }
 
 export default makeRequest;
