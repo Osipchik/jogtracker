@@ -4,40 +4,38 @@ import { config } from "../api/config";
 import AuthorizeContext from "../contexts/AuthorizeContext";
 
 
+function isTokeValid(token) {
+    return (token.expiresIn - Date.now()) > 0;
+}
+
+
 function AuthorizeHandler({children}) {
     let storedToken = JSON.parse(localStorage.getItem('token'));
     setToken(storedToken);
-    const [isAuth, setAuth] = useState(false);
+
+    const [isAuth, setAuth] = useState(isTokeValid(config));
 
     const timer = useRef();
 
-    const createTimer = (delay) => {
+    const createTimer = () => {
         timer.current = setTimeout(() => {
             localStorage.removeItem('token');
             setToken(null);
             setAuth(false);
-        }, delay)
+        }, config.expiresIn - Date.now())
     }
 
     const clearTimer = () => {
         clearTimeout(timer.current);
     }
 
-
     useEffect(() => {
 
-        if (!isAuth) {
-            clearTimer();
+        clearTimer();
+
+        if (isTokeValid(config)) {
+            createTimer();
         }
-
-        let expires = config.expiresIn - Date.now();
-
-        if (expires > 0) {
-            clearTimer();
-            createTimer(expires);
-            setAuth(true);
-        }
-
     }, [isAuth]);
 
 
