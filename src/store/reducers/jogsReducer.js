@@ -13,7 +13,9 @@ export const jogsReducer = createReducer(initialState, {
         state.jogs.push(action.item);
     },
     [ADD_JOGS]: (state, action) => {
-        state.jogs = action.items;
+        if (Array.isArray(action.items)) {
+            state.jogs = action.items;
+        }
     },
     [EDIT_JOG]: (state, action) => {
         state.jogs[action.index] = action.item;

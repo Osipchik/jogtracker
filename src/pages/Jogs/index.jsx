@@ -29,7 +29,7 @@ function Jogs() {
     useEffect(() => {
         if (items.length === 0) {
             Api.data.getData().then(i => {
-                dispatch(addJogs(i.response.jogs))
+                dispatch(addJogs(i))
             });
         }
     }, []);
