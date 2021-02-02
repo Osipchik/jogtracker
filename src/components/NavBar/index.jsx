@@ -15,7 +15,7 @@ function NavBar() {
     return (
         <Fragment>
             <nav className="nav-bar navbar">
-                <Link to="/login" className="logo">
+                <Link to="/" className="logo">
                     <LogoIcon className="sm-hide"/>
                     <LogoSmIcon className="md-hide"/>
                 </Link>

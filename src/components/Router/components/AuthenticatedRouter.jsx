@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Route } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 import {
     AddJogPage,
     EditJogPage,
@@ -13,7 +13,6 @@ function AuthenticatedRouter() {
     return (
         <Fragment>
             <Route exact path="/jogs">
-                {/*<Jogs/>*/}
                 <JogsPage />
             </Route>
 
@@ -34,6 +33,7 @@ function AuthenticatedRouter() {
                 <EmptyJogPage/>
             </Route>
 
+            <Route path="*" render={() => <Redirect to="/jogs"/>} />
         </Fragment>
     )
 }
