@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { useParams } from 'react-router-dom';
+import { Redirect, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux'
 import FormView from "./components/FormView";
 import { EmptyJogPage } from "../index";
@@ -28,7 +28,7 @@ function EditJog() {
         <Fragment>
             {item !== undefined
                 ? <FormView onSubmit={onSubmit} time={item.time} distance={item.distance} date={item.date}/>
-                : <EmptyJogPage/>
+                : <Redirect to="/jogs/empty" />
             }
         </Fragment>
     )

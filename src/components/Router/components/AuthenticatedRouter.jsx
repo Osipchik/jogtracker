@@ -12,6 +12,10 @@ import {
 function AuthenticatedRouter() {
     return (
         <Fragment>
+            <Route exact path="/">
+                <Redirect to="/jogs"/>
+            </Route>
+
             <Route exact path="/jogs">
                 <JogsPage />
             </Route>
@@ -33,7 +37,9 @@ function AuthenticatedRouter() {
                 <EmptyJogPage/>
             </Route>
 
-            <Route path="*" render={() => <Redirect to="/jogs"/>} />
+            <Route path="*">
+                <Redirect to="/jogs"/>
+            </Route>
         </Fragment>
     )
 }
