@@ -19,9 +19,9 @@ function EditJog() {
         formObject.user_id = item.user_id
 
         let res = await Api.data.editJog(formObject);
-        res.response.date = (new Date(res.response.date)).getTime();
+        res.date = (new Date(res.date)).getTime();
 
-        dispatch(editJog(res.response, id));
+        dispatch(editJog(res, id));
     }
 
     return (

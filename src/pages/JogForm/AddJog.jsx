@@ -8,7 +8,6 @@ import { addJog } from '../../store/actionCreators/jogActions';
 function AddJog() {
     const dispatch = useDispatch();
 
-
     const onSubmit = async (formData) => {
         let res = await Api.data.addJog(formData);
         dispatch(addJog(res.response))
