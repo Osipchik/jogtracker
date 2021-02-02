@@ -1,60 +1,33 @@
-import React, {Fragment, useContext} from 'react';
+import React, { useContext } from 'react';
 import {
     BrowserRouter,
     Switch,
     Route,
-    Redirect
 } from "react-router-dom";
 import NavBar from "../NavBar";
-import Login from "../../pages/Login";
-import Info from "../../pages/Info";
-import Jogs from "../../pages/Jogs";
-import EmptyJog from "../../pages/EmptyJog/index";
-import { AddJog, EditJog } from "../../pages/JogForm";
 import AuthorizeContext from "../../contexts/AuthorizeContext";
+import AuthenticatedRouter from './components/AuthenticatedRouter';
+import { LoginPage } from "../../pages";
+import LoginRouter from "./components/LoginRouter";
+
 
 
 function Router() {
     const { isAuth } = useContext(AuthorizeContext);
-
 
     return (
         <BrowserRouter >
             <NavBar/>
 
             <Switch>
-                <Route exact path="/" render={() => <Redirect to="/jogs" />} />
-
-                <Route path="/login">
-                    <Login/>
+                <Route exact path="/login">
+                    <LoginPage/>
                 </Route>
 
-
-                {isAuth && (
-                    <Fragment>
-                        <Route exact path="/jogs">
-                            <Jogs/>
-                        </Route>
-
-                        <Route path="/add">
-                            <AddJog/>
-                        </Route>
-
-                        <Route path="/edit/:id">
-                            <EditJog/>
-                        </Route>
-
-
-                        <Route path="/info">
-                            <Info/>
-                        </Route>
-
-                        <Route path="/jogs/empty">
-                            <EmptyJog/>
-                        </Route>
-
-                    </Fragment>
-                )}
+                {isAuth 
+                    ? <AuthenticatedRouter />
+                    : <LoginRouter />
+                }
             </Switch>
         </BrowserRouter>
     )

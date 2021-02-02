@@ -11,9 +11,7 @@ import { addJogs } from '../../store/actionCreators/jogActions';
 
 function filterItems(items, filter) {
     if (filter) {
-        let i = items.filter(i => i.date >= filter.min && i.date <= filter.max);
-        console.log(i.length)
-        return i;
+        return items.filter(i => i.date >= filter.min && i.date <= filter.max);
     }
     
     return items;

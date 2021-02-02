@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux'
 import FormView from "./components/FormView";
-import EmptyJog from '../EmptyJog/index';
+import { EmptyJogPage } from "../index";
 import Api from '../../api';
 import { editJog } from '../../store/actionCreators/jogActions';
 
@@ -28,7 +28,7 @@ function EditJog() {
         <Fragment>
             {item !== undefined
                 ? <FormView onSubmit={onSubmit} time={item.time} distance={item.distance} date={item.date}/>
-                : <EmptyJog/>
+                : <EmptyJogPage/>
             }
         </Fragment>
     )
