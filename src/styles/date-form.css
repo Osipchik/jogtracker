@@ -1,6 +1,6 @@
 .data-form {
-    vertical-align: middle;
-    text-align: center;
+    display: inline-flex;
+    align-items: center;
 }
 
 .label {

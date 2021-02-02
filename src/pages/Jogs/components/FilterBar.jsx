@@ -7,32 +7,31 @@ function FilterBar({ onFilter }) {
     const { isOpen } = useContext(FilterContext);
     const [dateRange, setDateRange] = useState({});
 
-    const onSelectMin = useCallback((e) => {
-        let date = new Date(e.target.value);
-        setDateRange({...dateRange, min: date.getTime()});
+    const onSelectMin = useCallback((date) => {
+        setDateRange({...dateRange, min: date});
     });
 
-    const onSelectMax = useCallback((e) => {
-        let date = new Date(e.target.value);
-        setDateRange({...dateRange, max: date.getTime()});
+    const onSelectMax = useCallback((date) => {
+        setDateRange({...dateRange, max: date});
     });
 
     useEffect(() => {
         if (dateRange.hasOwnProperty('min') && dateRange.hasOwnProperty('max')) {
-            onFilter(dateRange);
+            onFilter({min: dateRange.min.valueOf(), max: dateRange.max.valueOf()});
         }
     }, [dateRange]);
 
     useEffect(() => {
         onFilter(null);
+        setDateRange({});
     }, [isOpen]);
 
     return (
         <Fragment>
             {isOpen && (
                 <div className="filter">
-                    <DateForm label="Data from" onSelect={onSelectMin}/>
-                    <DateForm label="Data to" onSelect={onSelectMax}/>
+                    <DateForm label="Data from" onSelect={onSelectMin} value={dateRange.min}/>
+                    <DateForm label="Data to" onSelect={onSelectMax} value={dateRange.max}/>
                 </div>
             )}
         </Fragment>

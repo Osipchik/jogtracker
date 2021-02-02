@@ -10,7 +10,7 @@ function AddJog() {
 
     const onSubmit = async (formData) => {
         let res = await Api.data.addJog(formData);
-        dispatch(addJog(res.response))
+        dispatch(addJog(res))
     }
 
     return (
