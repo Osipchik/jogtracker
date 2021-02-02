@@ -6,7 +6,7 @@ import {
     Redirect
 } from "react-router-dom";
 import NavBar from "../NavBar";
-import Login from "../../pages/Ligin";
+import Login from "../../pages/Login";
 import Info from "../../pages/Info";
 import Jogs from "../../pages/Jogs";
 import EmptyJog from "../../pages/EmptyJog/index";
