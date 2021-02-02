@@ -43,11 +43,13 @@ function AuthorizeHandler({children}) {
 
     const authorize = async () => {
         let newToken = await Api.auth.uuidLogin();
-        newToken.response.expires_in = Date.now() + newToken.response.expires_in;
+        if (newToken) {
+            newToken.expires_in = Date.now() + newToken.expires_in;
 
-        localStorage.setItem('token', JSON.stringify(newToken.response));
-        setToken(newToken.response);
-        setAuth(true);
+            localStorage.setItem('token', JSON.stringify(newToken));
+            setToken(newToken);
+            setAuth(true);
+        }
     }
 
     const value = {
